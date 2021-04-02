@@ -6,14 +6,9 @@ class PutRequest extends React.Component {
     this.state = { postId: null };
   }
   componentDidMount() {
-    const requestOptions = {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title: 'React PUT Request Example' })
-    };
-    fetch('https://jsonplaceholder.typicode.com/posts/1', requestOptions)
-      .then((response) => response.json())
-      .then((data) => this.setState({ postId: data.id }));
+      axios.put('https://jsonplaceholder.typicode.com/posts/1', { title: 'React PUT Request Example' })
+      .then(response => response.data)
+      .then(data => this.setState({ postId: data.id }));
   }
   render() {
     const { postId } = this.state;
