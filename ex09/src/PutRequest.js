@@ -6,7 +6,7 @@ class PutRequest extends React.Component {
     this.state = { postId: null };
   }
   componentDidMount() {
-      axios.put('https://jsonplaceholder.typicode.com/posts/1', { title: 'React PUT Request Example' })
+      axios.put('https://jsonplaceholder.typicode.com/posts/1', { title: 'React PUT Example' })
       .then(response => response.data)
       .then(data => this.setState({ postId: data.id }));
   }
