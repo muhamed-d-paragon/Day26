@@ -14,6 +14,7 @@ class PostRequestSetHeaders extends React.Component {
       }
       axios.post('https://reqres.in/api/articles', article, { headers })
       .then(response => this.setState({ articleId: response.data.id }));
+    }
   render() {
     const { articleId } = this.state;
     return (
